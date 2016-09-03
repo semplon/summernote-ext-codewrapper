@@ -36,7 +36,7 @@
                         var highlight = window.getSelection(),  
                             spn = document.createElement('pre'),
                             range = highlight.getRangeAt(0)
-                            highlight = nl2br(highlight, true);
+                            // highlight = nl2br(highlight, true);
                             highlight = htmlEscape(highlight);
                         spn.innerHTML = highlight;
 
@@ -50,7 +50,7 @@
                   return (str + '').replace(/([^>\r\n\r\n]+?)(\r\n\r\n|\n\r\n\r|\r\r|\n\n)/g, '$1'+ breakTag +'$2');
                 }
                 function htmlEscape(str) {
-                    return str
+                    return (str + '')
                         .replace(/&/g, '&amp;')
                         .replace(/"/g, '&quot;')
                         .replace(/'/g, '&#39;')
