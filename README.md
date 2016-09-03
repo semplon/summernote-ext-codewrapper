@@ -7,11 +7,15 @@ I made this plugin because the default Summernote had is not wrap the code into 
 When copying and paste the code, summernote can wrap html code but not the others. 
 
 see videos for the demo
+
 https://www.youtube.com/watch?v=TTUgPvp6DQs
 
 ## Installation
 call your plugin script after summernote 
+
+```html
 <script src="http://path.to/your/summernote-ext-codewrapper.min.js"></script>
+```
 
 load the summernote 
 ```js
