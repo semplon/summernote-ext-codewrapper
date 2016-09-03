@@ -37,6 +37,7 @@
                             spn = document.createElement('pre'),
                             range = highlight.getRangeAt(0)
                             highlight = nl2br(highlight, true);
+                            highlight = htmlEscape(highlight);
                         spn.innerHTML = highlight;
 
                         range.deleteContents();
@@ -47,6 +48,14 @@
                 function nl2br (str, is_xhtml) {   
                   var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
                   return (str + '').replace(/([^>\r\n\r\n]+?)(\r\n\r\n|\n\r\n\r|\r\r|\n\n)/g, '$1'+ breakTag +'$2');
+                }
+                function htmlEscape(str) {
+                    return str
+                        .replace(/&/g, '&amp;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
                 }
                 // create jQuery object from button instance.
                 var $elfinder = button.render();
